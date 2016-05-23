@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <title>TsumTsum Typing</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="./playersMovement.js"></script>
+    <script src="./displayElements.js"></script>
+  </head>
+  <body>
+    <h1>TsumTsum Typing</h1>
+    <div id='userPlayer'>
+      <img id='userPlayer' class='tsumtsum player' src='images/tigger.png'/>
+      <br>
+    </div>
+    <div id='computerPlayer'>
+      <img id='computerPlayer' class='tsumtsum computer sully' src='images/sully.png'/>
+    </div>
+    <div id='testParagraph'></div>
+
+    <p>{{paragraphText}}</p>
+    <div id='countdown'></div>
+    <div id='start'>
+      <input class='startButton' type='submit' value='Start'/>
+    </div>
+<!--      <input type="text" ng-model="paragraphText" onkeypress="checkInput()"/> -->
+
+    <script>
+      function checkInput() {
+        alert("What's up?");
+        //if input doesn't match the text, display error
+      }
+    </script>
+  </body>
+</html>
