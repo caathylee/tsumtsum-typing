@@ -1,14 +1,29 @@
 angular.module('app', [])
 .controller('TypingController', function ($scope, $interval) {
+  $scope.testParagraph = '"Hello, Nick," said Harry. "Hello, hello," said Nearly Headless Nick, starting and looking round. He wore a dashing, plumed hat on his long curly hair, and a tunic with a ruff, which concealed the fact that his neck was almost completely severed. He was pale as smoke, and Harry could see right through him to the dark sky and torrential rain outside. "You look troubled, young Potter," said Nick, folding a transparent letter as he spoke and tucking it inside his doublet.';
   $scope.hideInput = true;
   $scope.hideCountdown = true;
-  $scope.secondsLeft = 8;
-  // $scope.checkTypeField = function() {
-  //   var words = $scope.testParagraph.split(' ');
-  //   if( === words[0]) {
-  //     words.shift();
-  //   } 
+  $scope.secondsLeft = 3;
+  $scope.words = $scope.testParagraph.split(' ');
+  // $scope.wpm = function(totalTime, totalWords){
+  //   $scope.
   // };
+  $scope.wordLimit = $scope.words[0];
+  var typed = angular.element(document.querySelector('p#whatYoureTyping'));
+  $scope.checkTypeField = function() {
+    // for (var i = 0; i<$scope.words[0].length; i++) {
+    //   if ()
+    // }
+    if( $scope.whatYoureTyping === $scope.words[0]) {
+      typed.removeClass('red');
+      $scope.words.shift();
+      console.log($scope.words[0]);
+      $scope.whatYoureTyping = '';
+    }  else {
+      typed.addClass('red');
+      //display the word in red
+    }
+  };
   $scope.countdown = () => {
     var timer = $interval(() => {
       if ($scope.secondsLeft <= 0) {
@@ -29,5 +44,4 @@ angular.module('app', [])
     $scope.hideCountdown = false;
     $scope.countdown();
   };
-  $scope.testParagraph = '"Hello, Nick," said Harry. "Hello, hello," said Nearly Headless Nick, starting and looking round. He wore a dashing, plumed hat on his long curly hair, and a tunic with a ruff, which concealed the fact that his neck was almost completely severed. He was pale as smoke, and Harry could see right through him to the dark sky and torrential rain outside. "You look troubled, young Potter," said Nick, folding a transparent letter as he spoke and tucking it inside his doublet.';
 });

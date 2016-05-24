@@ -5,7 +5,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
     <!-- <script src="./playersMovement.js"></script> -->
-    <!-- <script src="./displayElements.js"></script> -->
     <script src="./typing.js"></script>
   </head>
 
@@ -29,9 +28,11 @@
     <div id='start'>
       <input ng-hide='!hideInput' ng-model='query' ng-click='buttonClicked()' class='startButton' type='submit' value='Start'/>
     </div>
+
+    <p id='whatYoureTyping' >{{whatYoureTyping | limitTo:words[0].length}}</p>
+    
     <input type="text" ng-change='checkTypeField()' ng-hide='hideInput' ng-model='whatYoureTyping' placeholder="Type in here"/>
 
-    <p>{{whatYoureTyping}}</p>
   </body>
 
 </html>

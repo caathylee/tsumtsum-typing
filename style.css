@@ -12,6 +12,14 @@ body {
   background-color:red;
   position: relative;
 }
+
+.highlight {
+  color: blue;
+}
+
+.red {
+  color: red;
+}
 .startButton {
   height: 30px;
 }
