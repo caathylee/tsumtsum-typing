@@ -1,8 +1,17 @@
 body {
   text-align: center;
-  font-family: sans-serif;
+  font-family: TravelingTypewriter, sans-serif;
 }
 
+#header {
+  background-color: white;
+}
+
+#players {
+  display: block;
+  background-color:red;
+  position: relative;
+}
 .startButton {
   height: 30px;
 }
@@ -21,20 +30,20 @@ img.tsumtsum {
   width: 150px;
   display: block;
 }
-
+img#userPlayer {
+  top: 100px;
+  left: 0px;
+  position: absolute;
+}
 img.sully {
+  top: 250px;
+  left: 15px;
   width: 120px;
+  position: absolute;
 }
 
 img.logo {
-  width: 100px;
-}
-
-.player {
-  position:;
-}
-.computer {
-
+  width: 350px;
 }
 
 .rotate {

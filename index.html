@@ -1,36 +1,37 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app='app'>
   <head>
     <title>TsumTsum Typing</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="./playersMovement.js"></script>
-    <script src="./displayElements.js"></script>
+    <!-- <script src="./playersMovement.js"></script> -->
+    <!-- <script src="./displayElements.js"></script> -->
+    <script src="./typing.js"></script>
   </head>
-  <body>
-    <h1>TsumTsum Typing</h1>
-    <div id='userPlayer'>
-      <img id='userPlayer' class='tsumtsum player' src='images/tigger.png'/>
-      <br>
-    </div>
-    <div id='computerPlayer'>
-      <img id='computerPlayer' class='tsumtsum computer sully' src='images/sully.png'/>
-    </div>
-    <div id='testParagraph'></div>
 
-    <p>{{paragraphText}}</p>
-    <div id='countdown'></div>
+  <body ng-controller='TypingController'>
+    
+    <div id='header'>
+      <img class='logo' src='images/tsumtsumlogo.png'/>
+    </div>
+
+    <div id='players'>  
+        <img id='userPlayer' class='tsumtsum' src='images/tigger.png'/>
+        <br>
+        <img id='computerPlayer' class='tsumtsum sully' src='images/sully.png'/>
+    </div>
+  
+    <div id='testParagraph'>{{testParagraph}}</div>
+
+  
+    <p ng-hide='hideCountdown' id='countdown'>Get ready to race! In {{secondsLeft}} seconds.</p>
+  
     <div id='start'>
-      <input class='startButton' type='submit' value='Start'/>
+      <input ng-hide='!hideInput' ng-model='query' ng-click='buttonClicked()' class='startButton' type='submit' value='Start'/>
     </div>
-<!--      <input type="text" ng-model="paragraphText" onkeypress="checkInput()"/> -->
+    <input type="text" ng-change='checkTypeField()' ng-hide='hideInput' ng-model='whatYoureTyping' placeholder="Type in here"/>
 
-    <script>
-      function checkInput() {
-        alert("What's up?");
-        //if input doesn't match the text, display error
-      }
-    </script>
+    <p>{{whatYoureTyping}}</p>
   </body>
+
 </html>
