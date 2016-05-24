@@ -8,11 +8,45 @@ body {
 }
 
 #players {
+  background-image: url('./images/background.jpeg');
   display: block;
-  background-color:red;
+/*  background-color:red;*/
   position: relative;
+  padding: 10px 20px 25px 20px;
+  border-radius: 5px;
 }
 
+.playerLabels {
+  text-align: left;
+}
+
+.computerLabel {
+  padding-bottom: 5px;
+}
+img.tsumtsum {
+  padding-top: 0px;
+  width: 150px;
+  display: block;
+}
+
+img#userPlayer {
+  top: 90px;
+  left: 0px;
+/*  position: absolute;*/
+}
+
+img.sully {
+  top: 250px;
+  left: 15px;
+  width: 120px;
+  padding-left: 15px;
+/*  position: absolute;*/
+}
+
+#testParagraph {
+  width: 100%;
+  padding: 20px 0px 20px 0px;
+}
 .highlight {
   color: blue;
 }
@@ -34,21 +68,6 @@ p.testParagraph {
   text-align: left;
 }
 
-img.tsumtsum {
-  width: 150px;
-  display: block;
-}
-img#userPlayer {
-  top: 100px;
-  left: 0px;
-  position: absolute;
-}
-img.sully {
-  top: 250px;
-  left: 15px;
-  width: 120px;
-  position: absolute;
-}
 
 img.logo {
   width: 350px;
