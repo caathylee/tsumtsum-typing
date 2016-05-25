@@ -4,7 +4,9 @@
     <title>TsumTsum Typing</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <!-- <script src="./playersMovement.js"></script> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
     <script src="./typing-angular.js"></script>
     <script src="./typing-jquery.js"></script>
   </head>
@@ -16,13 +18,16 @@
     </div>
 
     <div id='players'>  
-        <p class='playerLabels'>You</p>
-        <img id='userPlayer' class='tsumtsum' src='images/tigger.png'/>
+        <p class='playerLabel'>You</p>
+        <div id='userPlayer'>
+            <img id='userPlayer' class='tsumtsum' src='images/tigger.png'/>
+        </div>
         <br>
-        <p class='playerLabels computerLabel'>Computer</p>
+        <p class='computerLabel'>Computer</p>
         <img id='computerPlayer' class='tsumtsum sully' src='images/sully.png'/>
     </div>
-    <p id='testParagraph'>'"Hello, Nick," said Harry. "Hello, hello," said Nearly Headless Nick, starting and looking round. He wore a dashing, plumed hat on his long curly hair, and a tunic with a ruff, which concealed the fact that his neck was almost completely severed. He was pale as smoke, and Harry could see right through him to the dark sky and torrential rain outside. "You look troubled, young Potter," said Nick, folding a transparent letter as he spoke and tucking it inside his doublet.'</p>
+    <p class='currentWord'>{{ words[0] }}</p>
+    <p id='testParagraph'>{{testParagraph}}</p>
     <!-- <div id='testParagraph'>{{testParagraph}}</div> -->
 
   

@@ -14,14 +14,61 @@ body {
   position: relative;
   padding: 10px 20px 25px 20px;
   border-radius: 5px;
+  height: 400px;
 }
 
-.playerLabels {
-  text-align: left;
+p.currentWord {
+  font-size: 20px;
+  font-weight: 900;
 }
 
-.computerLabel {
-  padding-bottom: 5px;
+img#computerPlayer {
+  /*position: absolute;
+  -webkit-animation: computerMove 5s linear 1; 
+  animation: computerMove 5s linear 1;
+  animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards; 
+  animation-fill-mode: forwards;*/
+}
+
+.animateUser {
+  position: absolute;
+  -webkit-animation: computerMove 18s linear 1;
+  animation: computerMove 18s linear 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+
+}
+.animate {
+  position: absolute;
+  -webkit-animation: computerMove 24s linear 1;
+  animation: computerMove 24s linear 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes computerMove {
+    0% {
+      left: 0%;
+      transform:rotate(0deg);
+    }
+    20% {
+      transform:rotate(360deg);
+    }
+    40% {
+      transform:rotate(720deg);
+    }
+    60% {
+      transform:rotate(1080deg);
+    }
+    80% {
+      transform:rotate(1440deg);
+    }
+    100% {
+      left: 85%;
+      transform:rotate(1800deg);
+    }
+    from {}
+    to {}
 }
 img.tsumtsum {
   padding-top: 0px;
@@ -30,13 +77,13 @@ img.tsumtsum {
 }
 
 img#userPlayer {
-  top: 90px;
+  /*top: 90px;*/
   left: 0px;
 /*  position: absolute;*/
 }
 
 img.sully {
-  top: 250px;
+  top: 200px;
   left: 15px;
   width: 120px;
   padding-left: 15px;
@@ -48,7 +95,7 @@ img.sully {
   padding: 20px 0px 20px 0px;
 }
 .highlight {
-  color: blue;
+  color: #049be2;
 }
 
 .red {
@@ -110,4 +157,17 @@ img.logo {
 @keyframes spin {
     from {transform:rotate(0deg);}
     to {transform:rotate(360deg);}
+}
+.computerLabel, .playerLabel {
+  top: 0;
+  position: absolute;
+}
+
+.computerLabel {
+  top: 140px;
+  padding-bottom: 5px;
+}
+
+.playerLabel {
+
 }
